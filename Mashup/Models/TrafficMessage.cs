@@ -14,17 +14,11 @@ namespace Mashup.Models
         public string Title { get; set; }
         public string ExactLocation { get; set; }
         public string Description { get; set; }
-        public float Latitude { get; set; }
-        public float Longitude { get; set; }
+        public string Latitude { get; set; }
+        public string Longitude { get; set; }
         public int Category { get; set; }
         public string SubCategory { get; set; }
 
-        //public TrafficMessage(JToken tmToken)
-        //{
-        //    //Title = (tmToken["title"]).ToString();
-        //    //Description = (tmToken["description"]).ToString();
-        //    //ExactLocation = (tmToken["exactlocation"]).ToString();
-        //}
     }
     public enum Priority
     {

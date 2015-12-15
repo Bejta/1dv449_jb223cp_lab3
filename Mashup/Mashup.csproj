@@ -133,6 +133,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\TrafficMessage.cs" />
+    <Compile Include="Models\TrafficMessageJson.cs" />
     <Compile Include="Models\Webservices\SverigeRadioWebservice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

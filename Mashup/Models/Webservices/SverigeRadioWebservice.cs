@@ -12,8 +12,7 @@ namespace Mashup.Models.Webservices
 {
     public class SverigeRadioWebservice
     {
-        //public IEnumerable<TrafficMessage> GetTrafficMessages()
-        public TrafficMessage GetTrafficMessages()
+        public IEnumerable<TrafficMessage> GetTrafficMessages()
         {
             var rawJson = string.Empty;
 
@@ -25,11 +24,10 @@ namespace Mashup.Models.Webservices
             {
                 rawJson = reader.ReadToEnd();
             }
-             var json_serializer = new JavaScriptSerializer();
-             //IEnumerable<TrafficMessage> messages = json_serializer.Deserialize<TrafficMessage>(rawJson);
-             var result = JsonConvert.DeserializeObject<TrafficMessage>(rawJson);
-             return result ;
-           // return JArray.Parse(rawJson).Select(t => new TrafficMessage(t)).ToList();
+
+             var json_serializer = new JavaScriptSerializer();   
+             var result = JsonConvert.DeserializeObject<TrafficMessagesJson>(rawJson).messages;
+             return result;
         }
     }
 
