@@ -25,9 +25,12 @@ namespace Mashup.Models.Webservices
                 rawJson = reader.ReadToEnd();
             }
 
-             var json_serializer = new JavaScriptSerializer();   
-             var result = JsonConvert.DeserializeObject<TrafficMessagesJson>(rawJson).messages;
-             return result;
+            var json_serializer = new JavaScriptSerializer();   
+            var result = JsonConvert.DeserializeObject<TrafficMessagesJson>(rawJson).messages;
+
+            //Order messages by data when created
+            result = result.OrderByDescending(o => o.CreatedDate).ToList(); 
+            return result;
         }
     }
 
