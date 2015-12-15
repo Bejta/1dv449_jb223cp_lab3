@@ -1,0 +1,17 @@
+﻿ /*This css is to ensure that the google map contols (zoom bar etc) show and size correctly. */
+
+#map_canvas img
+     {
+      max-width:none
+
+     }
+
+/* This css is to give a nice big popup "info window" when a marker is clicked on the map */
+    .infoDiv {
+    height: 200px;    
+    width: 300px; 
+    -webkit-user-select: none; 
+    background-color: white; 
+    }
+
+

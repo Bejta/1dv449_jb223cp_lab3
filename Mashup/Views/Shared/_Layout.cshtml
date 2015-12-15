@@ -3,13 +3,15 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    
+    @Styles.Render("~/Content/Style.css")
 </head>
-<body onload="GetMap();">
+<body>
     <div class="container body-content">
-        @RenderBody()
-        <div id='mapDiv' style="position:absolute; width:400px; height:400px;"></div>
+        <section class="content-wrapper main-content clear-fix">
+            @RenderBody()
+        </section>
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
@@ -18,15 +20,15 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/Maps")
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
     @RenderSection("scripts", required: false)
+    
 </body>
 </html>
-@Styles.Render("~/Content/css")
-@Scripts.Render("~/bundles/modernizr")
-<script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>
-<script type="text/javascript">
-    function GetMap() {
-        var map = new Microsoft.Maps.Map(document.getElementById("mapDiv"), { credentials: "Ar7yrfT4Hux1-O7311-MEO-utjJJKIpiZbUwuZsxA3KhUU-UT5Oisz1kmxE9EnOQ" });
-        //map.focus.
-    }
-</script>
+
+
+
+
+    
