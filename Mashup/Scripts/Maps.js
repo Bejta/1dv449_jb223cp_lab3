@@ -1,16 +1,48 @@
-﻿//function GetMap() {
-//    var mapOptions = {
-//        credentials: "Ar7yrfT4Hux1-O7311-MEO-utjJJKIpiZbUwuZsxA3KhUU-UT5Oisz1kmxE9EnOQ",
-//    }
-//    var map = new Microsoft.Maps.Map(document.getElementById("mapDiv"), mapOptions);
-//    var viewBoundaries = Microsoft.Maps.LocationRect.fromLocations(new Microsoft.Maps.Location(62.02, 15.38), new Microsoft.Maps.Location(47.620700, -122.347584), new Microsoft.Maps.Location(47.622052, -122.345869));
+﻿              
+   function Initialize() {
 
-//    map.setView({ bounds: viewBoundaries });
-//    //map.focus.
-//}
+       google.maps.visualRefresh = true;
+       var Sweden = new google.maps.LatLng(61.02, 14.38);
 
-<!-- This code tells the browser to execute the "Initialize" method 
-only when the complete document model has been loaded. -->
-$(document).ready(function () {
-    Initialize(); 
-});  
+               
+        var mapOptions = {
+            zoom: 5,
+            center: Sweden,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+        };
+                
+        // This makes the div with id "map_canvas" a google map
+        var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+        //var yourJavaScriptArray = @Html.Raw(Json.Encode(Model.YourDotNetArray));
+
+
+        //marker.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png')
+   }
+
+   //function AddMarker(lat, lot, title) {
+   //    google.maps.visualRefresh = true;
+   //    var Sweden = new google.maps.LatLng(61.02, 14.38);
+
+
+   //    var mapOptions = {
+   //        zoom: 5,
+   //        center: Sweden,
+   //        mapTypeId: google.maps.MapTypeId.ROADMAP,
+   //    };
+
+   //    var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+       
+   //    // This shows adding a simple pin "marker" - this happens to be the Tate Gallery in Liverpool!
+   //    var myLatlng = new google.maps.LatLng(lat, lot);
+
+   //    var marker = new google.maps.Marker({
+   //        position: myLatlng,
+   //        map: map,
+   //        title: title
+   //    });
+
+   //    // You can make markers different colors...  google it up!
+   //    marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png')
+  // }
+
+  
