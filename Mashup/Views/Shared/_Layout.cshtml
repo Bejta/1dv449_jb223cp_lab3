@@ -9,16 +9,17 @@
     
 </head>
 <body>
-    <div class="container body-content">
+    <div>
         @RenderSection("featured", required: false)
         <section class="content-wrapper main-content clear-fix">
             @RenderBody()
         </section>
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Jasmin Bejtovic</p>
         </footer>
     </div>
+    @Scripts.Render("~/Scripts/Maps.js")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Styles.Render("~/Content/css")

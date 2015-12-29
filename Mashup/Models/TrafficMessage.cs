@@ -1,6 +1,8 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Mashup.ViewModels;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -9,7 +11,9 @@ namespace Mashup.Models
     public class TrafficMessage
     {
         public int id { get; set; }
-        public int priority { get; set; }
+        public Priority priority { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:dd MMM yyyy hh:mm:ss}")]
         public DateTime CreatedDate { get; set; }
         public string Title { get; set; }
         public string ExactLocation { get; set; }
@@ -20,19 +24,17 @@ namespace Mashup.Models
         public string SubCategory { get; set; }
 
     }
+
+    
     public enum Priority
     {
-        MycketAllvarligHändelse,
+        [Display(Name = "Mycket allvarlig händelse")]
+        MycketAllvarligHändelse=1,
+        [Display(Name = "Stor händelse")]
         StorHändelse,
         Störning,
         Information,
+        [Display(Name = "Mindre störning")]
         MindreStörning
     };
-    public enum Category
-    {
-        Vägtrafik,
-        Kollektivtraffik,
-        PlaneradStörning,
-        Övrigt
-    }
 }
