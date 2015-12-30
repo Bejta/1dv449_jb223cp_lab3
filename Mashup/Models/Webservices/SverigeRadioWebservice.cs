@@ -55,15 +55,23 @@ namespace Mashup.Models.Webservices
 
         public IEnumerable<TrafficMessage> GetFilteredMessages(int id)
         {
+            //var rawJson = string.Empty;
+
+            //var requestUriString = "http://api.sr.se/api/v2/traffic/messages?pagination=false&format=json";
+            //var request = (HttpWebRequest)WebRequest.Create(requestUriString);
+
+            //using (var response = request.GetResponse())
+            //using (var reader = new StreamReader(response.GetResponseStream()))
+            //{
+            //    rawJson = reader.ReadToEnd();
+            //}
+
             var rawJson = string.Empty;
 
-            var requestUriString = "http://api.sr.se/api/v2/traffic/messages?pagination=false&format=json";
-            var request = (HttpWebRequest)WebRequest.Create(requestUriString);
-
-            using (var response = request.GetResponse())
-            using (var reader = new StreamReader(response.GetResponseStream()))
+            //Reads data from messages.json file
+            using (var readerCashe = new StreamReader(HttpContext.Current.Server.MapPath("~/App_Data/messages.json")))
             {
-                rawJson = reader.ReadToEnd();
+                rawJson = readerCashe.ReadToEnd();
             }
 
             var json_serializer = new JavaScriptSerializer();
@@ -72,6 +80,7 @@ namespace Mashup.Models.Webservices
             //Order messages by data when created
             //result = result.OrderByDescending(o => o.CreatedDate).ToList();
             result = result.Where(o => o.Category == id).ToList();
+            result = result.OrderByDescending(o => o.CreatedDate).ToList(); 
             return result;
         }
     }

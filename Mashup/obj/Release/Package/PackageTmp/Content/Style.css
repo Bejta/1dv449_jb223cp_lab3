@@ -1,0 +1,76 @@
+﻿ /*This css is to ensure that the google map contols (zoom bar etc) show and size correctly. */
+
+#map-canvas img{max-width:none}
+
+#map-canvas{
+    height:900px;
+    width:480px;
+
+}
+
+
+/* This css is to give a nice big popup "info window" when a marker is clicked on the map */
+    .infoDiv {
+    border-radius: 25px;
+    border: 2px solid #337ab7;
+    padding: 20px; 
+    width: 200px;
+    height: 150px; 
+    font-size:0.8em;
+    background-color:#faf6a3;
+    opacity:0.8;
+    height: 100px;    
+    width: 200px; 
+    -webkit-user-select: none; 
+    background-color:#a0c7d7; 
+    }
+    /* white background and box outline */
+.gm-style > div:last-child > div > div:first-child > div
+{
+    /* we have to use !important because we are overwritng inline styles */
+    border-radius: 25px !important;
+    border: 2px solid #337ab7 !important;
+    padding: 20px !important; 
+    background-color: #b6ff00 !important;
+    opacity:0.7;
+    box-shadow: none !important;
+    width: auto !important;
+    height: auto !important;
+}
+/*.gm-style > div:first-child > div + div > div:last-child > div > div:first-child > div
+{
+    /* we have to use !important because we are overwritng inline styles 
+    background-color: #337ab7 !important;
+    opacity:0.7;
+    box-shadow: none !important;
+    width: auto !important;
+    height: auto !important;
+}*/
+
+/* arrow colour */
+.gm-style > div:first-child > div + div > div:last-child > div > div:first-child > div > div > div
+{
+    background-color: #b6ff00 !important; 
+}
+
+/* close button 
+.gm-style > div:first-child > div + div > div:last-child > div > div:last-child
+{
+    margin-right: 5px;
+    margin-top: 5px;
+}*/
+
+/* image icon inside close button 
+.gm-style > div:first-child > div + div > div:last-child > div > div:last-child > img
+{
+    display: none;
+}
+
+/* positioning of infowindow */
+.gm-style-iw
+{
+    top: 22px !important;
+    left: 22px !important;
+}
+
+

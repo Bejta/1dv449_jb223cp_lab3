@@ -157,6 +157,7 @@
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="App_Data\messages.json" />
+    <None Include="Properties\PublishProfiles\trafikinformation.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\BingMap.1.1-min.js" />
     <Content Include="Scripts\bootstrap.js" />
