@@ -1,6 +1,7 @@
 
 ##Reflektionsfrågor
 ### Trafikinformation
+### http://trafikinformation.azurewebsites.net
 
 #####Vad finns det för krav du måste anpassa dig efter i de olika API:erna?
 Google Maps API som jag använder i min applikation kräver inte något nyckel eller token, och därför är lätt att förbi alla anpassningar.
