@@ -37,11 +37,11 @@ VIKTIGT: En gång när data krypteras, det ÄR möjligt med rätt nyckel att de-
 Exempel på symmetrisk kryptering (en nyckel för kryptering och de-kryptering):
 ![symmetric-key-cyrptography](https://cloud.githubusercontent.com/assets/8629282/12337175/c3075fa8-bb08-11e5-8719-cfa28a6d6e50.jpg)
 ######Hashning
-Hashning är teknik av förändring av input-sträng med hjälp av olika algoritmer eller hasning funktioner. Förändrad sträng lagras permanent i databas eller fil. Hasning-funktion är inverterbar. En gång när vi hashar lösenordet och sparar i databas, vi kan inte (eller bör inte) se den värdet som strängen hadde i början.
+Hashning är teknik av förändring av input-sträng med hjälp av olika algoritmer eller hasning funktioner. Förändrad sträng lagras permanent i databas eller fil. Hasning-funktion är inverterbar. En gång när vi hashar lösenordet och sparar i databas, vi kan inte (eller bör inte) se den värdet som strängen hade i början.
 
 ######Skillnad
-Hashning är en väg process, och lösenordet sparas som förändrad värde. Det är omöjligt (utan hackning) få det orginella värdet igen.
-Kryptering krypterar och de-krypterar data genom att använda en eller två nycklar. Det är möjligt att se det orginella värdet.
+Hashning är en väg process, och lösenordet sparas som förändrad värde. Det är omöjligt (utan hackning) få det originella värdet igen.
+Kryptering krypterar och de-krypterar data genom att använda en eller två nycklar. Det är möjligt att se det originella värdet.
 
 ######Hantering av hashning
 Finns flera steg som man kan göra om man vill hasha lösenordet rätt:
@@ -54,6 +54,12 @@ Fördelar med salt är följande:
  * Använda flera tecken som är inte bokstäver och siffror.
  * Använda INTE samma lösenord för flera tjänster
 * Använd samma felmeddelande om angiven lösenord eller användarnamn är inte rätt (Man undviker bekräfta att angiven användarnamn är rätt).
+
+#####Websockets
+Websockets är avancerad teknik vilken öppnar en uppkoppling mellan webbläsare och server, och då uppkoppling finns den är tillgängligt tills servern eller klient avslutar den. Med öppen uppkoppling mellan servern och klient, webbläsaren och servern kan byta meddelande mellan varandra. Det gör webbutveckling _event driven_ , oberoende av användare.
+Webscoket uppkoppling är som sagt _event driven_ , snabbt och två-väg. Innan websockets, allt trafik mellan klient och servern var på HTTP protokoll
+
+
 
 
 
