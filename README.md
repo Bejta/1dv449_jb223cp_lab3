@@ -34,9 +34,26 @@ CSRF (eng. Cross-Site Request Forgery) är en attack i vilken elak användare ut
 ######Kryptering
 Kryptering är teknik för ändring av känsliga data under transfer tid innan datan lagras permanent. Det finns två olika typer av kryptering, symmetrisk och asymmetrisk Symmetrisk kryptering använder en  nyckel för kryptering av data, och samma nyckel för de-kryptering när data sparas. Asymmetrisk kryptering använder två nycklar, öppen och privat. Dom två nycklarna är matematiskt relaterade.
 VIKTIGT: En gång när data krypteras, det ÄR möjligt med rätt nyckel att de-kryptera värdet igen.
+Exempel på symmetrisk kryptering (en nyckel för kryptering och de-kryptering):
 ![symmetric-key-cyrptography](https://cloud.githubusercontent.com/assets/8629282/12337175/c3075fa8-bb08-11e5-8719-cfa28a6d6e50.jpg)
 ######Hashning
+Hashning är teknik av förändring av input-sträng med hjälp av olika algoritmer eller hasning funktioner. Förändrad sträng lagras permanent i databas eller fil. Hasning-funktion är inverterbar. En gång när vi hashar lösenordet och sparar i databas, vi kan inte (eller bör inte) se den värdet som strängen hadde i början.
 
+######Skillnad
+Hashning är en väg process, och lösenordet sparas som förändrad värde. Det är omöjligt (utan hackning) få det orginella värdet igen.
+Kryptering krypterar och de-krypterar data genom att använda en eller två nycklar. Det är möjligt att se det orginella värdet.
+
+######Hantering av hashning
+Finns flera steg som man kan göra om man vill hasha lösenordet rätt:
+* Använda säkrare och etablerade hashfunktioner, som PBKDF2, bcrypt och scrypt
+* "Salta" lösenordet innan hasning. Det betyder att man tilläger ett slumpmäsigt värde till lösenord innan hashning. Saltet kan lagras i klar text, och viktigt är att saltet är uniket per användare (bra praktik är att det är tillräckligt långt).
+Fördelar med salt är följande:
+ * Rainbow tables attacker blir svårare
+ * Två användare med samma lösenord för olika värden sparade i databas
+* Uppmuntra användare att välja ett smart lösenord
+ * Använda flera tecken som är inte bokstäver och siffror.
+ * Använda INTE samma lösenord för flera tjänster
+* Använd samma felmeddelande om angiven lösenord eller användarnamn är inte rätt (Man undviker bekräfta att angiven användarnamn är rätt).
 
 
 
