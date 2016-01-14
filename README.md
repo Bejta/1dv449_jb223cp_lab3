@@ -21,3 +21,22 @@ I princip finns inga känsliga data i själva applikation, och finns inget som s
 Mina skripter laddas på slutet av Index dokument. Finns nästan inget redudant kod. Jag anropar inte API:er i onödan och cashar information så att det blir lite bättre prestanda.
 Jag använde egenskap i själva API som jag inte behöver (copyright) för att spara timestamp (information om tiden när hämtas data från API) i den. På så sätt min JSON fil blir lite mindre i jämförelse om jag skapade en ny egenskap i den.
 Nackdelen är att koden blev lite mindre läsbart (timestamp i copyright?).
+
+##Uppdatering
+
+#####CSRF
+
+CSRF (eng. Cross-Site Request Forgery) är en attack i vilken elak användare utnyttjar användare som är inloggad på någon tjänst eller webbplats, genom att skicka HTTP Request som den inloggade användare. Elak användare utnyttjar att attackerade webbtjänst kollar inte från vilken källa kommer HTTP Request. Förutom att elak användare utnyttjar själva webbtjänst, vanlig användares webbläsare är också uttnytjad om den är inloggad på webbtjänst i frågan.
+Man kan förhindra CRSF attack genom att använda token i form av en session, som kan få ett nytt värde varje gång sidan laddas om. På så sätt kan vi se om det handlar om riktigt request. Andra möjliga sätt är att kräva om-autentisering av användare, eller vi kan göma token i URLen.
+
+#####Hashning och Kryptering - skillnad
+
+######Kryptering
+Kryptering är teknik för ändring av känsliga data under transfer tid innan datan lagras permanent. Det finns två olika typer av kryptering, symetrisk och asymetrisk. Symetrisk kryptering använder en  nyckel för kryptering av data, och samma nyckel för dekryptering när data sparas. Asymetrisk kryptering använder två nycklar, öppen och privat. Dom två nycklarna är matematiskt relaterade.
+VIKTIGT: En gång när data krypteras, det ÄR möjligt med rätt nyckel att dekryptera värdet igen.
+
+######Hashning
+
+
+
+
