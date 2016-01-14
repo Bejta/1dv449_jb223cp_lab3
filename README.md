@@ -26,15 +26,15 @@ Nackdelen är att koden blev lite mindre läsbart (timestamp i copyright?).
 
 #####CSRF
 
-CSRF (eng. Cross-Site Request Forgery) är en attack i vilken elak användare utnyttjar användare som är inloggad på någon tjänst eller webbplats, genom att skicka HTTP Request som den inloggade användare. Elak användare utnyttjar att attackerade webbtjänst kollar inte från vilken källa kommer HTTP Request. Förutom att elak användare utnyttjar själva webbtjänst, vanlig användares webbläsare är också uttnytjad om den är inloggad på webbtjänst i frågan.
-Man kan förhindra CRSF attack genom att använda token i form av en session, som kan få ett nytt värde varje gång sidan laddas om. På så sätt kan vi se om det handlar om riktigt request. Andra möjliga sätt är att kräva om-autentisering av användare, eller vi kan göma token i URLen.
+CSRF (eng. Cross-Site Request Forgery) är en attack i vilken elak användare utnyttjar användare som är inloggad på någon tjänst eller webbplats, genom att skicka HTTP Request som den inloggade användare. Elak användare utnyttjar att attackerade webbtjänst kollar inte från vilken källa kommer HTTP Request. Förutom att elak användare utnyttjar själva webbtjänst, vanlig användares webbläsare är också utnyttjad om den är inloggad på webbtjänst i frågan. Man kan förhindra CRSF attack genom att använda token i form av en session, som kan få ett nytt värde varje gång sidan laddas om. På så sätt kan vi se om det handlar om riktigt request. Andra möjliga sätt är att kräva om-autentisering av användare, eller vi kan gömma token i URLen.
+
 
 #####Hashning och Kryptering - skillnad
 
 ######Kryptering
-Kryptering är teknik för ändring av känsliga data under transfer tid innan datan lagras permanent. Det finns två olika typer av kryptering, symetrisk och asymetrisk. Symetrisk kryptering använder en  nyckel för kryptering av data, och samma nyckel för dekryptering när data sparas. Asymetrisk kryptering använder två nycklar, öppen och privat. Dom två nycklarna är matematiskt relaterade.
-VIKTIGT: En gång när data krypteras, det ÄR möjligt med rätt nyckel att dekryptera värdet igen.
-
+Kryptering är teknik för ändring av känsliga data under transfer tid innan datan lagras permanent. Det finns två olika typer av kryptering, symmetrisk och asymmetrisk Symmetrisk kryptering använder en  nyckel för kryptering av data, och samma nyckel för de-kryptering när data sparas. Asymmetrisk kryptering använder två nycklar, öppen och privat. Dom två nycklarna är matematiskt relaterade.
+VIKTIGT: En gång när data krypteras, det ÄR möjligt med rätt nyckel att de-kryptera värdet igen.
+![symmetric-key-cyrptography](https://cloud.githubusercontent.com/assets/8629282/12337175/c3075fa8-bb08-11e5-8719-cfa28a6d6e50.jpg)
 ######Hashning
 
 
